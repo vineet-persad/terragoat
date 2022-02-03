@@ -108,3 +108,4 @@ resource "azurerm_postgresql_configuration" "example" {
   server_name         = azurerm_postgresql_server.example.name
   value               = "off"
 }
+
