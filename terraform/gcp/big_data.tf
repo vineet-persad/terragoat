@@ -18,7 +18,7 @@ resource google_sql_database_instance "master_instance" {
   }
 }
 
-   
+
 resource google_sql_database_instance "master_instance" {
   name             = "terragoat-${var.environment}-master"
   database_version = "POSTGRES_11"
