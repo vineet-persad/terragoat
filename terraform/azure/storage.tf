@@ -58,7 +58,7 @@ resource "azurerm_storage_account" "example" {
     yor_trace            = "23861ff4-c42d-495e-80ac-776c74035f43"
   }
 }
- 
+
 resource "azurerm_storage_account_network_rules" "test" {
   resource_group_name  = azurerm_resource_group.example.name
   storage_account_name = azurerm_storage_account.example.name
