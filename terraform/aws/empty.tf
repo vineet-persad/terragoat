@@ -1,7 +1,7 @@
 {
-  "resource": {
+  resource: {
   }
 
   {
-  "resource": ""
+  resource: ""
   }
