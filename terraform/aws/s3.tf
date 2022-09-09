@@ -63,6 +63,42 @@ resource "aws_s3_bucket" "financials" {
 
 }
 
+
+resource "aws_s3_bucket" "financials_log_bucket" {
+  bucket = "financials-log-bucket"
+}
+
+resource "aws_s3_bucket_logging" "financials" {
+  bucket = aws_s3_bucket.financials.id
+
+  target_bucket = aws_s3_bucket.financials_log_bucket.id
+  target_prefix = "log/"
+}
+
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "financials" {
+  bucket = aws_s3_bucket.financials.bucket
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm     = "AES256"
+    }
+  }
+}
+
+
+
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "financials" {
+  bucket = aws_s3_bucket.financials.bucket
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm     = "aws:kms"
+    }
+  }
+}
+
 resource "aws_s3_bucket" "operations" {
   # bucket is not encrypted
   # bucket does not have access logs
@@ -141,4 +177,3 @@ resource "aws_s3_bucket" "logs" {
     yor_trace            = "01946fe9-aae2-4c99-a975-e9b0d3a4696c"
   })
 }
-
