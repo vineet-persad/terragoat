@@ -45,4 +45,20 @@ resource google_compute_disk "unencrypted_disk" {
     git_repo             = "terragoat"
     yor_trace            = "bf87b7d7-a9d8-4f03-a0d4-8a4cbb647d03"
   }
+
 }
+
+resource google_compute_disk "unencrypted_disk2" {
+  name = "terragoat-${var.environment}-disk2"
+  labels = {
+    git_commit           = "445bcb504dedcea29ee830c8ec18f7dc868bfc7e"
+    git_file             = "terraform__gcp__instances_tf"
+    git_last_modified_at = "2022-04-29-13-45-45"
+    git_last_modified_by = "54596211vineet-persad"
+    git_modifiers        = "54596211vineet-persad"
+    git_org              = "vineet-persad"
+    git_repo             = "terragoat"
+    yor_trace            = "bf87b7d7-a9d8-4f03-a0d4-8a4cbb647d03"
+  }
+}
+
