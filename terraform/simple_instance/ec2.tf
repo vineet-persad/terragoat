@@ -21,6 +21,7 @@ resource "aws_security_group" "ssh_traffic" {
     git_org              = "vineet-persad"
     git_repo             = "terragoat"
     yor_trace            = "a5300675-3ddd-4743-b001-92fb989cf882"
+    yor_name             = "ssh_traffic"
   }
 }
 
@@ -38,6 +39,7 @@ resource "aws_instance" "web_server_instance" {
     git_org              = "vineet-persad"
     git_repo             = "terragoat"
     yor_trace            = "b26aac10-e297-4f1e-9429-8f4f2c2c5806"
+    yor_name             = "web_server_instance"
   }
 }
 
